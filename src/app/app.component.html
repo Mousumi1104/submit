@@ -1,0 +1,70 @@
+<div class="form-floating">
+  <form [formGroup]="loginForm" (ngSubmit)="getuser(loginForm.value)">
+    <div class="mb-3">
+      <label class="form-label">First Name <span style="color: red;">*</span></label>
+      <input type="text" name="name" formControlName="first" class="form-control" width="200xpx">
+      <span *ngIf="first && first.invalid && first.touched">Input field is no
+        t valid</span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Last Name <span style="color: red;">*</span></label>
+      <input type="text" name="lname" formControlName="last" class="form-control">
+      <span *ngIf="last && last.invalid && last.touched">Input field is no
+        t valid</span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email<span style="color: red;">*</span></label>
+      <br>
+      <input type="email" name="email" formControlName="email" class="fo
+ rm-control" width="200xpx">
+      <span *ngIf="email && email.invalid && email.touched">email is not
+        valid</span>
+
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Phone Number<span style="color: red;">*</span></label>
+      <br>
+      <input type="text" name="ph" formControlName="ph" class="fo
+   rm-control">
+      <span *ngIf="ph && ph.invalid && ph.touched">Phone No. is not
+        valid</span>
+
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Organization Name<span style="color: red;">*</span></label>
+      <br>
+      <input type="text" name="orgn" formControlName="orgn" class="fo
+     rm-control">
+      <span *ngIf="orgn && orgn.invalid && orgn.touched">Input field is not
+        valid</span>
+
+
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Organization Address<span style="color: red;">*</span></label>
+      <br>
+      <input type="text" name="orga" formControlName="orga" class="fo
+       rm-control">
+      <span *ngIf="orga && orga.invalid && orga.touched">Input field is not
+        valid</span>
+
+
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Organization Establish Date<span style="color: red;">*</span></label>
+      <br>
+      <input type="date" name="dt" formControlName="orgd" cl ass="form-control" id="datetpick">
+      <span *ngIf="orgd && orgd.invalid && orgd.touched">Date is required</span>
+        </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password<span style="color: red;">*</span></label>
+        <br>
+        <input type="password" name="password" formControlName="password" cl ass="form-control">
+        <span *ngIf="password && password.invalid && password.touched">min 16
+          character is required</span>
+      </div>
+      <button type="submit" class="btn btn-danger" (click)="submit()">Submit</button>
+      <button type="reset" class="btn btn-danger" style="margin-left:30px ;">Reset</button>
+    </form>
+</div>
